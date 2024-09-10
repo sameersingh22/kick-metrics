@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import TeamPage from "./pages/TeamPage/TeamPage";
 import PlayerMetricsPage from "./pages/PlayerMetricsPage/PlayerMetricsPage";
+import './styles/main.scss'
 
 function App() {
     return (
