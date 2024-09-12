@@ -71,11 +71,6 @@ Tracking soccer performance can be challenging for players and coaches due to in
 3. **Player Metrics Page**:
    - Allows users to edit and view performance metrics for a selected player.
 
-### Mockups
-
-1. **Home Page Mockup**: Displays options to navigate to team view.
-2. **Team Page Mockup**: Shows a list of players in the selected team.
-3. **Player Metrics Page Mockup**: Provides a form to edit player metrics.
 
 ### Data
 
