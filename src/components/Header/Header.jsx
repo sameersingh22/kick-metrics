@@ -14,7 +14,6 @@ function Header() {
             <nav className="header__nav">
                 <ul className="header__nav-list">
                     <li><Link to="/home" className="header__nav-item">Home</Link></li>
-                    <li><Link to="/teams" className="header__nav-item">Teams</Link></li>
                     <li><Link to="/playerMetrics" className="header__nav-item">PlayerMetrics</Link></li>
                 </ul>
             </nav>

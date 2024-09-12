@@ -1,10 +1,12 @@
 import React from "react";
-import './TeamPage.scss';
+import { useParams } from "react-router-dom";
 
 function TeamPage() {
+    const { id } = useParams();
+
     return (
         <div>
-            <p>This is the TeamPage</p>
+            <h1>Team {id} Page</h1>
         </div>
     );
 }
