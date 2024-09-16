@@ -29,7 +29,7 @@ function TeamPage() {
                             <p className="team__player-age">Age: {player.age}</p>
                             <p className="team__player-position">Position: {player.position}</p>
                             <Link
-                                to={`/playerMetrics/${player.id}`} // Passing player ID in URL
+                                to={`/playerMetrics/${player.id}`}
                                 className="team__player-link"
                             >
                                 View Metrics
