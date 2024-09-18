@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import TeamPage from "./pages/TeamPage/TeamPage";
+import LandingPage from "./pages/LandingPage/LandingPage";
 import PlayerMetricsPage from "./pages/PlayerMetricsPage/PlayerMetricsPage";
 import './styles/main.scss';
 
@@ -25,7 +26,7 @@ function App() {
                 <Header />
                 <main className="app__main">
                     <Routes>
-                        <Route path="/" element={<HomePage />} />
+                        <Route path="/" element={<LandingPage />} />
                         <Route path="/home" element={<HomePage />} />
                         <Route path="/teams/:id" element={<TeamPage />} />
                         <Route
@@ -40,3 +41,5 @@ function App() {
 }
 
 export default App;
+
+//Add the arrow navigation

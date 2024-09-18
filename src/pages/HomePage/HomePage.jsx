@@ -5,7 +5,7 @@ import './HomePage.scss';
 function HomePage() {
     return (
         <div>
-            <p>This is the HomePage</p>
+            <p></p>
             <ul>
                 <li>
                     <Link to="/teams/1">Team 1</Link>                    

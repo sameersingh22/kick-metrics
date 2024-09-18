@@ -3,17 +3,14 @@ import { useParams } from "react-router-dom";
 
 function PlayerMetricsPage({ playersData }) {
     const { id } = useParams();
-    
-    // Convert the ID from string to number for comparison
+
     const playerId = parseInt(id);
 
-    // Combine all players into a single array
     const allPlayers = [];
     for (const teamId in playersData) {
         allPlayers.push(...playersData[teamId]);
     }
 
-    // Find the player with the matching ID
     const player = allPlayers.find(p => p.id === playerId);
 
     return (
