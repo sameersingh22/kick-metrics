@@ -19,7 +19,6 @@ function App() {
             { id: 5, name: "Player 5", age: 23, position: "Right Mid", goals: 5, assists: 10, teamId: 2 },
         ]
     };
-    
 
     return (
         <BrowserRouter>
@@ -29,7 +28,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<LandingPage />} />
                         <Route path="/home" element={<HomePage />} />
-                        <Route path="/teams/:id" element={<TeamPage />} />
+                        <Route path="/teams/:id" element={<TeamPage playersData={playersData} />} />
                         <Route
                             path="/playerMetrics/:id"
                             element={<PlayerMetricsPage playersData={playersData} />}
@@ -42,5 +41,3 @@ function App() {
 }
 
 export default App;
-
-//Add the arrow navigation
