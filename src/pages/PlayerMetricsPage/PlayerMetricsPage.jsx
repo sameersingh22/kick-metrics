@@ -6,16 +6,14 @@ function PlayerMetricsPage({ playersData }) {
     const { id } = useParams();
     const playerId = parseInt(id);
 
-    // Gather all players from all teams
     const allPlayers = [];
     for (const teamId in playersData) {
         allPlayers.push(...playersData[teamId]);
     }
 
-    // Find the player with the matching playerId
+
     const player = allPlayers.find((p) => p.id === playerId);
 
-    // Log the player to check if teamId is available
     console.log('Player Data:', player);
 
     return (
