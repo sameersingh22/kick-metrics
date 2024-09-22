@@ -25,6 +25,11 @@ const TeamPage = () => {
 
     return (
         <div className="team-page">
+            <p className="team-page__nav">
+                <Link to="/">Landing Page</Link> &gt; 
+                <Link to="/home">Home Page</Link> &gt; 
+                {team?.name || 'Team'}
+            </p>
             <h1>{team?.name || 'Team Page'}</h1>
             <div className="team-page__players">
                 {players.map(player => (
