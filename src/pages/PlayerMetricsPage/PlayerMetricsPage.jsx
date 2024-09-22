@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import './PlayerMetricsPage.scss';
 
@@ -26,7 +26,14 @@ function PlayerMetricsPage() {
     if (!player) return <p>Loading...</p>;
 
     return (
+        
         <div className="player-metrics">
+            <p className="metrics-page__nav">
+                <Link to="/">Landing Page</Link> &gt; 
+                <Link to="/home">Home Page</Link> &gt;
+                <Link to={`/teams/${player.teamId}`}>Team {player.teamId} Page </Link>  &gt;
+                Player {player.id}
+            </p>
             <h1 className="player-metrics__title">{player.name}'s Metrics</h1>
             <p className="player-metrics__item">Goals: {player.goals}</p>
             <p className="player-metrics__item">Assists: {player.assists}</p>
