@@ -1,0 +1,22 @@
+.player-goals-bar-chart {
+    text-align: center;
+    svg {
+        border: 1px solid #ccc;
+    }
+    .bar {
+        transition: fill 0.3s;
+    }
+    .bar:hover {
+        fill: #ff6347;
+    }
+    .x-axis {
+        font-size: 12px;
+    }
+    .y-axis {
+        font-size: 12px;
+    }
+    .x-axis-label, .y-axis-label {
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
