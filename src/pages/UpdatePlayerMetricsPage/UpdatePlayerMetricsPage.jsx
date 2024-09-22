@@ -1,77 +1,71 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './UpdatePlayerMetricsPage.scss';
+import { useParams } from 'react-router-dom';
 
-function UpdatePlayerMetricsPage() {
-    const { id } = useParams();
-    const navigate = useNavigate();
+const UpdatePlayerMetricsPage = () => {
     const [player, setPlayer] = useState(null);
     const [goals, setGoals] = useState('');
     const [assists, setAssists] = useState('');
 
+    const { id } = useParams();
+
+    const playerId = id; 
+
     useEffect(() => {
         const fetchPlayer = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/players');
-                const allPlayers = Object.values(response.data).flat();
-                const playerData = allPlayers.find(p => p.id === parseInt(id));
-                if (playerData) {
-                    setPlayer(playerData);
-                    setGoals(playerData.goals);
-                    setAssists(playerData.assists);
-                }
+                const response = await axios.get(`http://localhost:8080/api/players/${playerId}`);
+                setPlayer(response.data);
+                setGoals(response.data.goals);
+                setAssists(response.data.assists);
             } catch (error) {
                 console.error("Error fetching player data:", error);
             }
         };
 
         fetchPlayer();
-    }, [id]);
+    }, [playerId]);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleUpdate = async () => {
         try {
-            await axios.put(`http://localhost:8080/api/players/update/${id}`, {
-                goals,
-                assists
+            await axios.put(`http://localhost:8080/api/update/${playerId}`, { goals, assists }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             });
-            navigate(`/playerMetrics/${id}`, { state: { updated: true } });
+
         } catch (error) {
             console.error("Error updating player metrics:", error);
         }
     };
 
-    if (!player) return <p>Loading...</p>;
-
     return (
         <div className="update-player-metrics">
-            <h1 className="update-player-metrics__title">Update {player.name}'s Metrics</h1>
-            <form className="update-player-metrics__form" onSubmit={handleSubmit}>
-                <div className="update-player-metrics__field">
-                    <label htmlFor="goals">Goals:</label>
-                    <input
-                        type="number"
-                        id="goals"
-                        value={goals}
-                        onChange={(e) => setGoals(e.target.value)}
-                        required
-                    />
+            <h1>Update Player Metrics</h1>
+            {player && (
+                <div className="update-player-metrics__form">
+                    <label>
+                        Goals:
+                        <input
+                            type="number"
+                            value={goals}
+                            onChange={(e) => setGoals(e.target.value)}
+                        />
+                    </label>
+                    <label>
+                        Assists:
+                        <input
+                            type="number"
+                            value={assists}
+                            onChange={(e) => setAssists(e.target.value)}
+                        />
+                    </label>
+                    <button onClick={handleUpdate}>Update</button>
                 </div>
-                <div className="update-player-metrics__field">
-                    <label htmlFor="assists">Assists:</label>
-                    <input
-                        type="number"
-                        id="assists"
-                        value={assists}
-                        onChange={(e) => setAssists(e.target.value)}
-                        required
-                    />
-                </div>
-                <button type="submit" className="update-player-metrics__submit">Update</button>
-            </form>
+            )}
         </div>
     );
-}
+};
 
 export default UpdatePlayerMetricsPage;
