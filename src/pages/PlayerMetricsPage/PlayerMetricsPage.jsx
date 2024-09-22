@@ -1,43 +1,35 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, useLocation } from "react-router-dom";
+import axios from "axios";
 import './PlayerMetricsPage.scss';
 
-function PlayerMetricsPage({ playersData }) {
+function PlayerMetricsPage() {
     const { id } = useParams();
-    const playerId = parseInt(id);
+    const location = useLocation();
+    const [player, setPlayer] = useState(null);
 
-    const allPlayers = [];
-    for (const teamId in playersData) {
-        allPlayers.push(...playersData[teamId]);
-    }
+    useEffect(() => {
+        const fetchPlayer = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/api/players');
+                const allPlayers = Object.values(response.data).flat();
+                const playerData = allPlayers.find(p => p.id === parseInt(id));
+                setPlayer(playerData);
+            } catch (error) {
+                console.error("Error fetching player data:", error);
+            }
+        };
 
+        fetchPlayer();
+    }, [id, location.state?.updated]);
 
-    const player = allPlayers.find((p) => p.id === playerId);
-
-    console.log('Player Data:', player);
+    if (!player) return <p>Loading...</p>;
 
     return (
         <div className="player-metrics">
-            <p className="player-metrics__nav">
-                <Link to="/">Landing Page</Link> &gt; 
-                <Link to="/home">Home Page</Link> &gt; 
-                {player?.teamId ? (
-                    <Link to={`/teams/${player.teamId}`}>Team {player.teamId} Page</Link>
-                ) : (
-                    "Team Not Found"
-                )} &gt; 
-                Player {player?.name || "Not Found"} Page
-            </p>
-
-            {player ? (
-                <>
-                    <h1 className="player-metrics__title">{player.name}'s Metrics</h1>
-                    <p className="player-metrics__goals">Goals: {player.goals}</p>
-                    <p className="player-metrics__assists">Assists: {player.assists}</p>
-                </>
-            ) : (
-                <p>Player not found.</p>
-            )}
+            <h1 className="player-metrics__title">{player.name}'s Metrics</h1>
+            <p className="player-metrics__item">Goals: {player.goals}</p>
+            <p className="player-metrics__item">Assists: {player.assists}</p>
         </div>
     );
 }

@@ -36,7 +36,7 @@ function UpdatePlayerMetricsPage() {
                 goals,
                 assists
             });
-            navigate(`/playerMetrics/${id}`);
+            navigate(`/playerMetrics/${id}`, { state: { updated: true } });
         } catch (error) {
             console.error("Error updating player metrics:", error);
         }
