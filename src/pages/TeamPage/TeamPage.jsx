@@ -21,6 +21,7 @@ function TeamPage({ playersData }) {
                             <p>Age: {player.age}</p>
                             <p>Position: {player.position}</p>
                             <Link to={`/playerMetrics/${player.id}`}>View Metrics</Link>
+                            <Link to={`/updatePlayer/${player.id}`}>Update Metrics</Link>
                         </li>
                     ))
                 ) : (
