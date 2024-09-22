@@ -4,19 +4,19 @@ import './TeamPage.scss';
 
 function TeamPage({ playersData }) {
     const { id } = useParams();
-
-    const players = playersData[id] || [];
+    const teamId = parseInt(id, 10);
+    const players = playersData[teamId] || [];
 
     return (
         <div className="team-page">
             <p className="team-page__nav">
-                <Link to="/">Landing Page</Link> &gt; <Link to="/home">Home Page</Link> &gt; Team {id} Page
+                <Link to="/">Landing Page</Link> &gt; <Link to="/home">Home Page</Link> &gt; Team {teamId} Page
             </p>
-            <h1>Team {id} Page</h1>
-            <ul className="team__list">
+            <h1>Team {teamId} Page</h1>
+            <ul className="team-page__list">
                 {players.length > 0 ? (
                     players.map((player) => (
-                        <li key={player.id} className="team__player">
+                        <li key={player.id} className="team-page__player">
                             <h3>{player.name}</h3>
                             <p>Age: {player.age}</p>
                             <p>Position: {player.position}</p>
