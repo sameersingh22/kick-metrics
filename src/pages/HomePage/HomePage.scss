@@ -1,5 +1,6 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
+
 .home-page {
   padding: $spacing-base;
 
@@ -20,10 +21,24 @@
 
   .home-page__teams {
     display: flex;
-    flex-direction: column;
-    gap: $spacing-small;
-  }
+    align-items: flex-start;
+    gap: $spacing-base;
+    justify-content: space-between;
 
+    .home-page__teams-content {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-small;
+    }
+
+    .home-page__image {
+      width: 350px;
+      height: auto;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+    }
+  }
+  
   .home-page__card {
     background-color: $color-card;
     border-radius: $border-radius;
