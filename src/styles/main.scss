@@ -12,7 +12,8 @@
     padding: 2rem;
 }
 
-body{
-    background-image: url("../assets/images/grass.jpg");
-
+body {
+    background-image: url("../assets/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
