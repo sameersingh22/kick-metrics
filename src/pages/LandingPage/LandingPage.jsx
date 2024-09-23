@@ -15,9 +15,9 @@ const LandingPage = () => {
                     <section className="landing-page__features">
                         <h2>Features</h2>
                         <ul>
-                            <li>View player metrics</li>
-                            <li>Explore team details</li>
-                            <li>Stay updated with the latest stats</li>
+                            <li>View player details</li>
+                            <li>Explore team metrics</li>
+                            <li>Compare goal-scoring performance among team members</li>
                         </ul>
                     </section>
                     <section className="landing-page__cta">
