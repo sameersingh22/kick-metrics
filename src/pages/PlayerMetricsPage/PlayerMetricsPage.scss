@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+.player-metrics {
+    .metrics-page__nav {
+        margin-bottom: $spacing-base;
+    }
+
+    .player-metrics__title {
+        font-size: $font-size-xlarge;
+        color: $color-dark;
+        margin-bottom: $spacing-large;
+        font-weight: 600;
+    }
+
+    .player-metrics__item {
+        font-size: $font-size-base;
+        margin-bottom: $spacing-small;
+    }
+}

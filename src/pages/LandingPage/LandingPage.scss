@@ -1,26 +1,29 @@
+@import '../../styles/variables';
+
 .landing-page {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem;
+    padding: $spacing-large;
 
     &__content {
         flex: 1;
-        margin-right: 2rem; 
+        margin-right: $spacing-large;
 
         h1 {
-            font-size: 2.5rem;
+            font-size: $font-size-xlarge;
+            color: $color-dark;
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: $font-size-large;
         }
 
         &__features {
-            margin: 2rem 0;
+            margin: $spacing-large 0;
 
             h2 {
-                font-size: 2rem;
+                font-size: $font-size-large;
             }
 
             ul {
@@ -28,32 +31,34 @@
                 padding: 0;
 
                 li {
-                    font-size: 1.2rem;
-                    margin: 0.5rem 0;
+                    font-size: $font-size-large;
+                    margin: $spacing-small 0;
                 }
             }
         }
 
         &__cta {
-            margin-top: 2rem;
+            margin-top: $spacing-large;
 
-            .cta-button {
-                display: inline-block;
-                padding: 1rem 2rem;
-                background-color: #007bff;
-                color: white;
-                text-decoration: none;
-                border-radius: 5px;
-            }
         }
     }
-
+    
     &__image {
         flex: 1;
+        
         img {
-            width: 100%; 
-            max-width: 400px; 
-            height: auto; 
+            width: 100%;
+            max-width: 400px;
+            height: auto;
         }
     }
+}
+
+.cta-button {
+    display: inline-block;
+    padding: $spacing-base $spacing-large;
+    background-color: $color-primary;
+    color: $color-dark;
+    text-decoration: none;
+    border-radius: $border-radius;
 }

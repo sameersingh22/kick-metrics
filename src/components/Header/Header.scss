@@ -1,11 +1,13 @@
+@import '../../styles/variables';
+
 .header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background: linear-gradient(to right, #159957, #155799);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: $spacing-base;
+    background: linear-gradient(to right, $color-primary, $color-secondary);
+    box-shadow: $box-shadow;
 
     &__logo-container {
         display: flex;
@@ -25,19 +27,19 @@
     &__nav-list {
         list-style: none;
         display: flex;
-        gap: 1.5rem;
+        gap: $spacing-small;
         margin: 0;
         padding: 0;
     }
 
     &__nav-item {
         text-decoration: none;
-        color: var(--color-light);
-        font-size: 1rem;
+        color: $color-light;
+        font-size: $font-size-base;
         font-weight: bold;
 
         &:hover {
-            color: var(--color-secondary);
+            color: $color-secondary;
         }
     }
 }

@@ -1,43 +1,71 @@
+@import '../../styles/variables';
+
 .update-player-metrics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $spacing-large;
+    text-align: center;
+
     &__title {
-        font-size: 1.5em;
-        margin-bottom: 20px;
+        font-size: $font-size-xlarge;
+        color: $color-dark;
+        margin-bottom: $spacing-large;
+        font-weight: 600;
     }
 
     &__form {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        background-color: $color-light;
+        padding: $spacing-large;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        width: 100%;
         max-width: 400px;
-        margin: 0 auto;
+    }
 
-        &__field {
-            margin-bottom: 15px;
+    &__field {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: $spacing-base;
 
-            label {
-                display: block;
-                margin-bottom: 5px;
-                font-weight: bold;
-            }
-
-            input {
-                width: 100%;
-                padding: 8px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-            }
+        label {
+            font-size: $font-size-base;
+            margin-bottom: $spacing-small;
+            color: $color-dark;
+            font-weight: bold;
+            text-align: left;
         }
 
-        &__submit {
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        input {
+            padding: $spacing-small;
+            font-size: $font-size-base;
+            border: 1px solid #ddd;
+            border-radius: $border-radius;
+            transition: border-color 0.3s ease;
 
-            &:hover {
-                background-color: #0056b3;
+            &:focus {
+                outline: none;
+                border-color: $color-primary;
             }
+        }
+    }
+
+    &__submit {
+        padding: $spacing-small $spacing-base;
+        background-color: $color-primary;
+        color: $color-light;
+        border: none;
+        border-radius: $border-radius;
+        cursor: pointer;
+        font-size: $font-size-base;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $color-secondary;
         }
     }
 }
