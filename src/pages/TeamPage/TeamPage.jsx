@@ -14,6 +14,7 @@ const TeamPage = () => {
             try {
                 const response = await axios.get(`http://localhost:8080/api/teams/${id}`);
                 setTeam(response.data);
+                console.log(response.data);
                 setPlayers(response.data.players);
             } catch (error) {
                 console.error('Error fetching team or players', error);
