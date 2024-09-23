@@ -92,59 +92,65 @@ Tracking soccer performance can be challenging for players and coaches due to in
   - Passing Accuracy
   - Stamina
 
-### Endpoints
+## Endpoints
 
-1. **GET /teams**:
-   - Returns a list of all teams.
-   - **Response**:
-     ```json
-     [
-       {
-         "id": 1,
-         "name": "Team A"
-       }
-     ]
-     ```
+### GET /api/teams/:id
+- **Description**: Returns details of a specific team, including a list of players in that team.
+- **Response**:
+    ```json
+    {
+      "id": "1",
+      "name": "Team 1",
+      "players": [
+        {
+          "id": "6e0d5a70-6f8f-4d02-9356-d1d8e0b2e69e",
+          "name": "Jake Sullivan",
+          "age": 20,
+          "position": "Striker",
+          "goals": 10,
+          "assists": 5
+        },
+        {
+          "id": "7cbb3c18-3fd3-4457-8ff5-4aaef9f3f0c9",
+          "name": "Lucas Hernandez",
+          "age": 22,
+          "position": "Left Mid",
+          "goals": 15,
+          "assists": 7
+        }
+      ]
+    }
+    ```
 
-2. **GET /teams/:id/players**:
-   - Fetches a list of players for a specific team.
-   - **Response**:
-     ```json
-     [
-       {
-         "id": 1,
-         "name": "John Doe",
-         "position": "Midfielder"
-       }
-     ]
-     ```
+### GET /api/players/:id
+- **Description**: Fetches details of a specific player by their ID.
+- **Response**:
+    ```json
+    {
+      "id": "6e0d5a70-6f8f-4d02-9356-d1d8e0b2e69e",
+      "name": "Jake Sullivan",
+      "age": 20,
+      "position": "Striker",
+      "goals": 10,
+      "assists": 5
+    }
+    ```
 
-3. **GET /players/:id**:
-   - Fetches details of a specific player by their ID.
-   - **Response**:
-     ```json
-     {
-       "id": 1,
-       "name": "John Doe",
-       "position": "Midfielder",
-       "metrics": [
-         { "date": "2024-09-01", "goals": 2, "assists": 1, "passingAccuracy": 87 }
-       ]
-     }
-     ```
-
-4. **POST /players/:id/metrics**:
-   - Updates performance metrics for a player.
-   - **Request**:
-     ```json
-     {
-       "date": "2024-09-01",
-       "goals": 2,
-       "assists": 1,
-       "passingAccuracy": 87,
-       "stamina": 80
-     }
-     ```
+### PUT /api/players/:id
+- **Description**: Updates performance metrics for a player.
+- **Request**:
+    ```json
+    {
+      "goals": 12,
+      "assists": 6
+    }
+    ```
+- **Response**:
+    ```json
+    {
+      "message": "Player metrics updated successfully"
+    }
+    ```
 
 ## Roadmap
 
