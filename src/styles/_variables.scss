@@ -1,3 +1,5 @@
+@import './typography.scss';
+
 $color-primary: #3498db;        
 $color-secondary: #2ecc71;      
 $color-light: #ecf0f1;          
@@ -7,7 +9,8 @@ $color-card: wheat;
 $color-nav: #d2e7b6;
 
 $font-base: 'Verdana', sans-serif;   
-$font-heading: 'Georgia', serif;      
+$font-heading: 'Georgia', serif;    
+$font-custom: 'PlaywriteAUTAS', sans-serif;
 
 $font-size-small: 0.875rem;
 $font-size-base: 1rem;
