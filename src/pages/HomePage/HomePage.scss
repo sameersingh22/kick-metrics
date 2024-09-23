@@ -1,9 +1,10 @@
 @import "../../styles/variables";
-
+@import "../../styles/mixins";
 .home-page {
   padding: $spacing-base;
 
   .home-page__nav {
+    @include nav-bg;
     margin-bottom: $spacing-base;
     font-size: $font-size-base;
     color: $color-dark;
@@ -17,20 +18,28 @@
     }
   }
 
-  ul {
-    list-style: none;
-    padding: 0;
-
-    li {
-      margin: $spacing-small 0;
-    }
+  .home-page__teams {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-small;
   }
-}
 
-.navlink {
-  color: $color-dark;
-  text-decoration: none;
-  &:hover{
-    color: $color-primary;
+  .home-page__card {
+    background-color: $color-card;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    padding: $spacing-base;
+    text-align: center;
+    width: fit-content;
+
+    .teamlink {
+      color: $color-dark;
+      text-decoration: none;
+      font-size: $font-size-base;
+      display: block;
+      &:hover {
+        color: $color-primary;
+      }
+    }
   }
 }

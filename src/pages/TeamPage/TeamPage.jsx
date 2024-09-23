@@ -14,7 +14,6 @@ const TeamPage = () => {
             try {
                 const response = await axios.get(`http://localhost:8080/api/teams/${id}`);
                 setTeam(response.data);
-                console.log(response.data);
                 setPlayers(response.data.players);
             } catch (error) {
                 console.error('Error fetching team or players', error);
@@ -32,17 +31,15 @@ const TeamPage = () => {
                 Team {id} Page
             </p>
         <div className="team-page">
-            <p className="team-page__nav">
-                <Link to="/">Landing Page</Link> &gt; 
-                <Link to="/home">Home Page</Link> &gt; 
-                {team?.name || 'Team'}
-            </p>
             <h1>{team?.name || 'Team Page'}</h1>
             <div className="team-page__players">
                 {players.map(player => (
                     <div key={player.id} className="player-card">
                         <h2 className="player-card__name">{player.name}</h2>
                         <div className="player-card__metrics">
+                        <p>Age: {player.age}</p>
+                        <p>Position: {player.position}</p>
+                        <p>---METRICS---</p>
                             <p>Goals: {player.goals}</p>
                             <p>Assists: {player.assists}</p>
                         </div>

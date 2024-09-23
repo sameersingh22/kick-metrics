@@ -21,9 +21,9 @@ const PlayerGoalsBarChart = ({ players }) => {
             .range([margin.left, width - margin.right])
             .padding(0.1);
 
-        const maxGoals = d3.max(players, d => d.goals);
+        const maxGoals = 20; 
         const y = d3.scaleLinear()
-            .domain([0, maxGoals + 3]) 
+            .domain([0, maxGoals]) 
             .nice()
             .range([height - margin.bottom, margin.top]);
 
@@ -39,6 +39,11 @@ const PlayerGoalsBarChart = ({ players }) => {
             .attr("transform", `translate(${margin.left},0)`)
             .call(d3.axisLeft(y))
             .attr('class', 'y-axis');
+
+        svg.append('rect') 
+            .attr('width', width)
+            .attr('height', height)
+            .attr('fill', 'wheat'); 
 
         svg.append('g')
             .call(xAxis);
@@ -69,7 +74,6 @@ const PlayerGoalsBarChart = ({ players }) => {
             .attr('fill', '#333')
             .text(d => d.goals);
 
-        // Y-axis label
         svg.append('text')
             .attr('class', 'y-axis-label')
             .attr('text-anchor', 'middle')

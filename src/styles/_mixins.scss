@@ -1,0 +1,6 @@
+@mixin nav-bg {
+    width: fit-content;
+    background-color: $color-nav;
+    border-radius: 10px;
+    padding: 5px;
+}

@@ -8,7 +8,19 @@
 
     &__content {
         flex: 1;
-        margin-right: $spacing-large;
+        margin-left: $spacing-large;
+
+        .landing-page__card {
+            background-color: $color-card;
+            border-radius: $border-radius;
+            box-shadow: $box-shadow;
+            padding: $spacing-large;
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-large;
+            max-width: 400px;
+            margin: 0 auto;
+        }
 
         h1 {
             font-size: $font-size-xlarge;
@@ -39,13 +51,12 @@
 
         &__cta {
             margin-top: $spacing-large;
-
         }
     }
-    
+
     &__image {
         flex: 1;
-        
+
         img {
             width: 100%;
             max-width: 400px;
@@ -58,7 +69,7 @@
     display: inline-block;
     padding: $spacing-base $spacing-large;
     background-color: $color-primary;
-    color: $color-dark;
+    color: $color-light;
     text-decoration: none;
     border-radius: $border-radius;
 }
