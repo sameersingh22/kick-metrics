@@ -24,6 +24,12 @@ const TeamPage = () => {
     }, [id]);
 
     return (
+        <>
+                <p className="update-page__nav">
+                <Link to="/">Landing Page</Link> &gt; 
+                <Link to="/home">Home Page</Link> &gt; 
+                Team {id} Page
+            </p>
         <div className="team-page">
             <p className="team-page__nav">
                 <Link to="/">Landing Page</Link> &gt; 
@@ -49,6 +55,7 @@ const TeamPage = () => {
                 <PlayerGoalsBarChart players={players} />
             </div>
         </div>
+        </>
     );
 };
 

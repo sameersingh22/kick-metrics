@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './LandingPage.scss'; 
 import SoccerPlayer from '../../assets/images/soccer-player.png';
 
@@ -21,7 +22,7 @@ const LandingPage = () => {
                 <section className="landing-page__cta">
                     <h2>Get Started!</h2>
                     <p>Explore teams and players now.</p>
-                    <a href="/home" className="cta-button">Go to Home</a>
+                    <Link to="/home" className="cta-button">Go to Home</Link> 
                 </section>
             </div>
             <div className="landing-page__image">

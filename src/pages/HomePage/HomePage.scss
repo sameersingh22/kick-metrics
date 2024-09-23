@@ -1,0 +1,36 @@
+@import "../../styles/variables";
+
+.home-page {
+  padding: $spacing-base;
+
+  .home-page__nav {
+    margin-bottom: $spacing-base;
+    font-size: $font-size-base;
+    color: $color-dark;
+    a {
+      color: $color-dark;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: underline;
+        color: $color-primary;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: $spacing-small 0;
+    }
+  }
+}
+
+.navlink {
+  color: $color-dark;
+  text-decoration: none;
+  &:hover{
+    color: $color-primary;
+  }
+}
