@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./UpdatePlayerMetricsPage.scss";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 const UpdatePlayerMetricsPage = () => {
   const [player, setPlayer] = useState(null);
@@ -9,6 +9,7 @@ const UpdatePlayerMetricsPage = () => {
   const [assists, setAssists] = useState("");
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPlayer = async () => {
@@ -38,6 +39,7 @@ const UpdatePlayerMetricsPage = () => {
           },
         }
       );
+      navigate(`/teams/${player.teamId}`);
     } catch (error) {
       console.error("Error updating player metrics:", error);
     }
@@ -77,14 +79,12 @@ const UpdatePlayerMetricsPage = () => {
                 onChange={(e) => setAssists(e.target.value)}
               />
             </div>
-            <Link to={`/teams/${player.teamId}`}>
-              <button
-                className="update-player-metrics__submit"
-                onClick={handleUpdate}
-              >
-                Update
-              </button>
-            </Link>
+            <button
+              className="update-player-metrics__submit"
+              onClick={handleUpdate}
+            >
+              Update
+            </button>
           </div>
         )}
       </div>
