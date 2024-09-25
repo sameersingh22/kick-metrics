@@ -11,7 +11,7 @@ function PlayerMetricsPage() {
     useEffect(() => {
         const fetchPlayer = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/players');
+                const response = await axios.get('https://kick-metrics-api-a69304343da9.herokuapp.com/api/players');
                 const allPlayers = Object.values(response.data).flat();
                 const playerData = allPlayers.find(p => p.id === parseInt(id));
                 setPlayer(playerData);

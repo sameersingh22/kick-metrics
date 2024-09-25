@@ -14,7 +14,7 @@ const UpdatePlayerMetricsPage = () => {
     const fetchPlayer = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/players/${id}`
+          `https://kick-metrics-api-a69304343da9.herokuapp.com/api/players/${id}`
         );
         setPlayer(response.data);
         setGoals(response.data.goals);
@@ -30,7 +30,7 @@ const UpdatePlayerMetricsPage = () => {
   const handleUpdate = async () => {
     try {
       await axios.put(
-        `http://localhost:8080/api/update/${id}`,
+        `https://kick-metrics-api-a69304343da9.herokuapp.com/api/update/${id}`,
         { goals, assists },
         {
           headers: {
