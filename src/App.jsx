@@ -15,7 +15,7 @@ function App() {
     React.useEffect(() => {
         const fetchPlayersData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/players');
+                const response = await axios.get('https://kick-metrics-api-a69304343da9.herokuapp.com/api/players');
                 setPlayersData(response.data);
             } catch (error) {
                 console.error("Error fetching players data:", error);

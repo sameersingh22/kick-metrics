@@ -12,7 +12,7 @@ const TeamPage = () => {
     useEffect(() => {
         const fetchTeamData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/api/teams/${id}`);
+                const response = await axios.get(`https://kick-metrics-api-a69304343da9.herokuapp.com/api/teams/${id}`);
                 setTeam(response.data);
                 setPlayers(response.data.players);
             } catch (error) {
