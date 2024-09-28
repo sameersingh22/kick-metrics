@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/sameersingh22/kick-metrics/refs/heads/develop/src/assets/images/logo.webp" alt="Project Logo"  width="200" height="200">
+<img src="./src/assets/images/logo.webp" alt="Project Logo"  width="200" height="200">
 </div>
 
 # KickMetrics
