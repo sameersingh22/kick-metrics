@@ -24,16 +24,16 @@ KickMetrics is a web application designed to help youth soccer players and coach
 - [Roadmap](#roadmap)
 - [Future Implementations](#future-implementations)
 
-### Problem Space <a name="problem-space"></a>
+## Problem Space <a name="problem-space"></a>
 
 Tracking soccer performance can be challenging for players and coaches due to inconsistent record-keeping and a lack of centralized tools for monitoring progress. KickMetrics addresses these issues by offering an easy-to-use platform for managing team and player metrics, making it simpler to identify strengths and areas for improvement.
 
-### User Profile <a name="user-profile"></a>
+## User Profile <a name="user-profile"></a>
 
 - **Players**: Can view their team's roster and update their performance metrics by selecting their name from the list.
 - **Coaches**: In future updates, coaches will have the ability to manage player metrics, providing oversight and detailed analysis.
 
-### Features <a name="features"></a>
+## Features <a name="features"></a>
 
 1. **Team List:**
    - Users can view a list of teams available in the system. Selecting a team navigates to the team page, providing a structured overview of team members.
@@ -53,7 +53,7 @@ Tracking soccer performance can be challenging for players and coaches due to in
 6. **Navigation:**
    - The app includes a user-friendly navigation system, allowing users to easily move between the landing page, home page, team pages, and player metrics pages.
 
-### Implementation <a name="implementation"></a>
+## Implementation <a name="implementation"></a>
 
 #### Tech Stack <a name="tech-stack"></a>
 - **Frontend:** React for building the user interface, styled with Sass.
@@ -64,13 +64,13 @@ Tracking soccer performance can be challenging for players and coaches due to in
 #### APIs <a name="apis"></a>
 - **KickMetrics API:** Serves player and team data, providing endpoints for fetching player metrics and team information.
 
-### Sitemap <a name="sitemap"></a>
+## Sitemap <a name="sitemap"></a>
 - **Landing Page:** Welcomes users to KickMetrics with options to explore teams and players.
 - **Home Page:** Lists teams available in the system for user selection.
 - **Team Page:** Displays a roster of players for the selected team, including basic statistics and options to update player metrics.
 - **Update Metrics Page:** Allows users to view and edit performance metrics for a specific player based on their UUID.
 
-### Data <a name="data"></a>
+## Data <a name="data"></a>
 
 - **Teams Data**:
   - Team ID
