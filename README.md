@@ -4,6 +4,8 @@
 
 KickMetrics is a web application designed to help youth soccer players and coaches track performance metrics and visualize development. The app allows users to view teams, select players, and edit player metrics, providing a streamlined way to monitor and improve soccer skills.
 
+<a href="https://github.com/sameersingh22/kick-metrics-api">Check out the back end repo</a>
+
 ### Problem Space
 
 Tracking soccer performance can be challenging for players and coaches due to inconsistent record-keeping and a lack of centralized tools for monitoring progress. KickMetrics addresses these issues by offering an easy-to-use platform for managing team and player metrics, making it simpler to identify strengths and areas for improvement.
