@@ -136,7 +136,7 @@ Tracking soccer performance can be challenging for players and coaches due to in
     ```
 #### GET /api/players <a name="get-apiplayers"></a>
 
-- Fetches details of all players. 
+- **Description**: Fetches details of all players. 
 - **Response:**
 ```json
 {
