@@ -53,15 +53,11 @@ Tracking soccer performance can be challenging for players and coaches due to in
 6. **Navigation:**
    - The app includes a user-friendly navigation system, allowing users to easily move between the landing page, home page, team pages, and player metrics pages.
 
-7. **Responsive Design:**
-   - The app is styled with Sass, ensuring a responsive design that adapts to different screen sizes for a seamless user experience.
-
 ### Implementation <a name="implementation"></a>
 
 #### Tech Stack <a name="tech-stack"></a>
 - **Frontend:** React for building the user interface, styled with Sass.
 - **Backend:** Express.js for handling API requests and managing data.
-- **Database:** MySQL for storing teams, players, and performance metrics.
 - **Charting:** D3.js for visualizing player goals with bar charts.
 - **Version Control:** Git for source control.
 
@@ -154,8 +150,6 @@ Tracking soccer performance can be challenging for players and coaches due to in
       "assists": "5",
       "teamId": 1
     },
-    ...
-    ...
     ...
   ],
   "2": [
