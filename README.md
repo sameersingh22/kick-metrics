@@ -3,104 +3,101 @@
 </div>
 
 # KickMetrics
-
-## Overview
-
 KickMetrics is a web application designed to help youth soccer players and coaches track performance metrics and visualize development. The app allows users to view teams, select players, and edit player metrics, providing a streamlined way to monitor and improve soccer skills.
 
 <a href="https://github.com/sameersingh22/kick-metrics-api">Check out the back end repo</a>
 
-### Problem Space
+## Table of Contents
+- [Problem Space](#problem-space)
+- [User Profile](#user-profile)
+- [Features](#features)
+- [Implementation](#implementation)
+  - [Tech Stack](#tech-stack)
+  - [APIs](#apis)
+- [Sitemap](#sitemap)
+- [Data](#data)
+- [Endpoints](#endpoints)
+  - [GET /api/teams/:id](#get-apiteamsid)
+  - [GET /api/players/:id](#get-apiplayersid)
+  - [GET /api/players](#get-apiplayers)
+  - [PUT /api/players/:id](#put-apiplayersid)
+- [Roadmap](#roadmap)
+- [Future Implementations](#future-implementations)
+
+### Problem Space <a name="problem-space"></a>
 
 Tracking soccer performance can be challenging for players and coaches due to inconsistent record-keeping and a lack of centralized tools for monitoring progress. KickMetrics addresses these issues by offering an easy-to-use platform for managing team and player metrics, making it simpler to identify strengths and areas for improvement.
 
-### User Profile
+### User Profile <a name="user-profile"></a>
 
 - **Players**: Can view their team's roster and update their performance metrics by selecting their name from the list.
 - **Coaches**: In future updates, coaches will have the ability to manage player metrics, providing oversight and detailed analysis.
 
-### Features
+### Features <a name="features"></a>
 
-1. **Team List**:
-   - Users can view a list of teams available in the system. This feature allows users to select a team to see the players within it, providing an organized view of all teams and facilitating easy navigation.
+1. **Team List:**
+   - Users can view a list of teams available in the system. Selecting a team navigates to the team page, providing a structured overview of team members.
 
-2. **Player List**:
-   - Once a team is selected, the app displays a list of players in that team. Users can view basic player information and click on player names to access detailed performance metrics.
+2. **Player List:**
+   - Once a team is selected, the app displays the players belonging to that team, showing essential player information such as age, position, goals, and assists.
 
-3. **Edit Metrics**:
-   - Users can click on a player's name to open an interface for editing their performance metrics. This feature includes forms to input data such as goals scored, assists, passing accuracy, and stamina, allowing for accurate and up-to-date tracking of player performance.
+3. **Edit Player Metrics:**
+   - Users can update player metrics, including goals and assists, by clicking on a player's name. This feature provides a direct link to an editing interface for updating performance data.
 
-4. **Metric Tracking**:
-   - The app tracks various performance metrics over time, such as goals, assists, passing accuracy, and stamina. This feature provides players and coaches with detailed insights into performance trends and areas for improvement.
+4. **Player Metrics Overview:**
+   - The app allows users to view detailed performance metrics for individual players, displaying their goals and assists in a clear format.
 
-5. **Progress Visualization**:
-   - Performance metrics are visualized using charts and graphs. This feature helps users easily interpret data and observe progress or declines in performance metrics over time.
+5. **Player Goals Visualization:**
+   - Player performance is visualized using D3.js, creating a bar chart that displays the goals scored by each player, allowing for easy comparison of team members' goal-scoring performance.
 
-6. **Training Videos**:
-   - KickMetrics integrates with the YouTube API to fetch relevant soccer training videos. These videos would provide users with valuable resources for improving their soccer skills.
+6. **Navigation:**
+   - The app includes a user-friendly navigation system, allowing users to easily move between the landing page, home page, team pages, and player metrics pages.
 
-7. **Game/Training Log**:
-   - Players can add detailed logs after each game or training session. This feature allows users to record qualitative feedback, including observations and reflections, which complements quantitative performance metrics.
+7. **Responsive Design:**
+   - The app is styled with Sass, ensuring a responsive design that adapts to different screen sizes for a seamless user experience.
 
-8. **Team Management**:
-   - The app includes functionality for managing teams, such as adding or removing teams and updating team details. This ensures that the list of teams is always current and reflects any changes in team rosters.
+### Implementation <a name="implementation"></a>
 
-9. **Player Profile Overview**:
-   - Although player profiles are simplified, users can view an overview of a player's key information and recent metrics. 
+#### Tech Stack <a name="tech-stack"></a>
+- **Frontend:** React for building the user interface, styled with Sass.
+- **Backend:** Express.js for handling API requests and managing data.
+- **Database:** MySQL for storing teams, players, and performance metrics.
+- **Charting:** D3.js for visualizing player goals with bar charts.
+- **Version Control:** Git for source control.
 
-10. **Search and Filter**:
-    - Users can search and filter teams and players based on various criteria. This feature helps users quickly find specific teams or players and navigate through large datasets efficiently.
+#### APIs <a name="apis"></a>
+- **KickMetrics API:** Serves player and team data, providing endpoints for fetching player metrics and team information.
 
-## Implementation
+### Sitemap <a name="sitemap"></a>
+- **Landing Page:** Welcomes users to KickMetrics with options to explore teams and players.
+- **Home Page:** Lists teams available in the system for user selection.
+- **Team Page:** Displays a roster of players for the selected team, including basic statistics and options to update player metrics.
+- **Update Metrics Page:** Allows users to view and edit performance metrics for a specific player based on their UUID.
 
-### Tech Stack
+### Data <a name="data"></a>
 
-- **Frontend**: React for building the user interface, styled with Sass.
-- **Backend**: Express.js for handling API requests and managing data.
-- **Database**: MySQL for storing teams, players, and performance metrics.
-- **Charting**: Chart.js or D3.js for visualizing performance metrics.
-- **YouTube API**: Used to fetch and display soccer training videos.
-- **Version Control**: Git for source control.
-
-### APIs
-
-- **YouTube API**: Fetches soccer training videos based on predefined search criteria (e.g., "youth soccer training," "soccer drills for beginners").
-
-### Sitemap
-
-1. **Home Page**:
-   - Introduction to the app with options to view or select teams.
-   
-2. **Team Page**:
-   - Displays a list of players for the selected team.
-   
-3. **Player Metrics Page**:
-   - Allows users to edit and view performance metrics for a selected player.
-
-
-### Data
-
-- **Team Data**:
+- **Teams Data**:
   - Team ID
   - Team Name
   - List of Players (linked by Player ID)
-  
-- **Player Data**:
+
+- **Players Data**:
   - Player ID
   - Name
+  - Age
   - Position
-  - Performance Metrics (linked by Player ID)
-  
+  - Goals
+  - Assists
+  - Team ID (linked to Team Data)
+
 - **Performance Metrics**:
-  - Date
+  - Player ID (linked to Players Data)
   - Goals Scored
   - Assists
-  - Passing Accuracy
-  - Stamina
 
-## Endpoints
+## Endpoints <a name="endpoints"></a>
 
-### GET /api/teams/:id
+### GET /api/teams/:id <a name="get-apiteamsid"></a>
 - **Description**: Returns details of a specific team, including a list of players in that team.
 - **Response**:
     ```json
@@ -128,7 +125,7 @@ Tracking soccer performance can be challenging for players and coaches due to in
     }
     ```
 
-### GET /api/players/:id
+### GET /api/players/:id <a name="get-apiplayersid"></a>
 - **Description**: Fetches details of a specific player by their ID.
 - **Response**:
     ```json
@@ -141,8 +138,42 @@ Tracking soccer performance can be challenging for players and coaches due to in
       "assists": 5
     }
     ```
+#### GET /api/players <a name="get-apiplayers"></a>
 
-### PUT /api/players/:id
+- Fetches details of all players. 
+- **Response:**
+```json
+{
+  "1": [
+    {
+      "id": "6e0d5a70-6f8f-4d02-9356-d1d8e0b2e69e",
+      "name": "Jake Sullivan",
+      "age": 20,
+      "position": "Striker",
+      "goals": 10,
+      "assists": "5",
+      "teamId": 1
+    },
+    ...
+    ...
+    ...
+  ],
+  "2": [
+    {
+      "id": "ec832c42-89a8-4e27-a4c6-1f0d504f5bcf",
+      "name": "Alex Johnson",
+      "age": 20,
+      "position": "Striker",
+      "goals": "12",
+      "assists": "5",
+      "teamId": 2
+    },
+    ...
+  ]
+}
+```
+
+### PUT /api/players/:id <a name="put-apiplayersid"></a>
 - **Description**: Updates performance metrics for a player.
 - **Request**:
     ```json
@@ -158,11 +189,10 @@ Tracking soccer performance can be challenging for players and coaches due to in
     }
     ```
 
-## Roadmap
+## Roadmap <a name="roadmap"></a>
 
 - **Week 1**:
-  - Set up project structure (React, Express, MySQL).
-  - Design database schema for teams, players, and performance metrics.
+  - Set up project structure (React, Express).
   - Implement the team list page and player list functionality.
   - Develop backend endpoints for fetching teams and player metrics.
 
@@ -173,10 +203,12 @@ Tracking soccer performance can be challenging for players and coaches due to in
 
 ---
 
-## Future Implementations
+## Future Implementations <a name="future-implementations"></a>
 
-1. **User Accounts**: Implement authentication for coaches and players, allowing coaches to manage player metrics.
-   
-2. **Enhanced Metrics**: Integrate additional performance tracking features, such as advanced statistics and historical comparisons.
-   
-3. **Video Integration**: Add functionality for fetching and displaying training videos to support skill development.
+1. **Update Visual Design**: Revamp the website layout to create a more professional appearance, enhancing user experience and improving navigation.
+
+2. **User Accounts**: Implement authentication for coaches and players, enabling secure access and allowing coaches to manage player metrics effectively.
+
+3. **MySQL Database Integration**: Transition from a JSON file to a MySQL database for improved scalability, dynamic data management, and enhanced performance.
+
+4. **Video Integration**: Add functionality for fetching and displaying training videos, supporting skill development and providing valuable resources for players.
