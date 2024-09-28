@@ -195,8 +195,6 @@ Tracking soccer performance can be challenging for players and coaches due to in
   - Conduct testing to ensure data integrity and fix bugs.
   - Refine the UI and handle form validation and error management.
 
----
-
 ## Future Implementations <a name="future-implementations"></a>
 
 1. **Update Visual Design**: Revamp the website layout to create a more professional appearance, enhancing user experience and improving navigation.
